@@ -17,10 +17,10 @@ public class Main {
                 .logger(new Slf4jLogger())
                 .decoder(new JacksonDecoder(ClientConfig.OBJECT_MAPPER))
                 .encoder(new JacksonEncoder(ClientConfig.OBJECT_MAPPER))
-                .retryer(new Retryer.Default(1,2,3))
+                .retryer(new Retryer.Default(1,2,2))
                 .target(CustomerAppClient_3.class,
                         "http://localhost:8001/spring-customer-app");
 
-        client.createCustomer(null, new CreateCustomerRequest("fullName", "17737278341", "address"));
+        client.createCustomer(new CreateCustomerRequest("fullName", "17737278341", "address"));
     }
 }
