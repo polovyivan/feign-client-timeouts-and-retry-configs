@@ -21,6 +21,6 @@ public class Main {
                 .target(CustomerAppClient_2.class,
                         "http://localhost:8001/spring-customer-app");
 
-        client.createCustomer(null, new CreateCustomerRequest("fullName", "17737278341", "address"));
+        client.createCustomer(new CreateCustomerRequest("fullName", "17737278341", "address"));
     }
 }
