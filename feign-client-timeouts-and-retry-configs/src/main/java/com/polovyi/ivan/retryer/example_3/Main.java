@@ -17,7 +17,7 @@ public class Main {
                 .logger(new Slf4jLogger())
                 .decoder(new JacksonDecoder(ClientConfig.OBJECT_MAPPER))
                 .encoder(new JacksonEncoder(ClientConfig.OBJECT_MAPPER))
-                .retryer(new Retryer.Default(1000,2000,3))
+                .retryer(new Retryer.Default(1000,2000,4))
                 .target(CustomerAppClient_3.class,
                         "http://localhost:8001/spring-customer-app");
 
