@@ -7,6 +7,6 @@ import feign.RequestLine;
 public interface CustomerAppClient_3 {
 
     @RequestLine("POST /customers")
-    @Headers({"Content-Type:  application/json", "instruction: {instruction}"})
+    @Headers({"Content-Type:  application/json"})
     void createCustomer(CreateCustomerRequest body);
 }
