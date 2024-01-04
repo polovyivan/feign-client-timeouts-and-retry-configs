@@ -5,6 +5,7 @@ import com.polovyi.ivan.dto.CustomerResponse;
 import com.polovyi.ivan.service.CustomerService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -49,9 +50,20 @@ public class CustomerController {
 
     @PostMapping(path = "/customers")
     public void createCustomer(@Valid @RequestBody CreateCustomerRequest createCustomerRequest,
-            UriComponentsBuilder uriBuilder, HttpServletResponse response, @RequestHeader(required = false) String instruction) {
+            UriComponentsBuilder uriBuilder, HttpServletResponse response, @RequestHeader(required = false) String instruction)
+            throws IOException {
 
         if (mockResponse(response, instruction)) {
+            HttpStatus httpStatus = HttpStatus.valueOf(status);
+            response.getWriter().write("""
+                    {
+                        "timestamp": "2024-01-04T02:05:11.537+00:00",
+                        "status": %s,
+                        "error": "%s",
+                        "path": "/spring-customer-app/customers"
+                    }""".formatted(status, httpStatus.getReasonPhrase()));
+            response.getWriter().flush();
+            response.addHeader("Content-Type", "application/json");
             return;
         }
 
