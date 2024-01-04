@@ -63,7 +63,6 @@ public class CustomerController {
                         "path": "/spring-customer-app/customers"
                     }""".formatted(status, httpStatus.getReasonPhrase()));
             response.getWriter().flush();
-            response.addHeader("Content-Type", "application/json");
             return;
         }
 
@@ -92,5 +91,4 @@ public class CustomerController {
         }
         return false;
     }
-
 }

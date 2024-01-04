@@ -10,8 +10,9 @@ public class CustomRetryer implements Retryer {
 
     @Override
     public void continueOrPropagate(RetryableException e) {
+        System.out.println("e = " + e);
         int status = e.status();
-        if (status == 429) {
+        if (status == 501) {
             throw e;
         }
 
