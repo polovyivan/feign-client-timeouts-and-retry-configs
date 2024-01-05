@@ -24,7 +24,7 @@ public class Main {
                 .options(new Options(5, TimeUnit.SECONDS, 10, TimeUnit.SECONDS, true))
                 .target(CustomerAppClient_1.class,
                         "http://localhost:8001/spring-customer-app");
-
+        log.info("===> No delay");
         List<CustomerResponse> customerResponseListV1 = client.getCustomers(
                 null,
                 null,
@@ -32,12 +32,14 @@ public class Main {
                 null);
         log.info("customerResponseListV1 = " + customerResponseListV1);
 
+        log.info("===> Delay less than timeout config");
         List<CustomerResponse> customerResponseListWithDelay = client.getCustomers("5",
                 null,
                 null,
                 null);
         log.info("customerResponseListWithDelay = " + customerResponseListWithDelay);
 
+        log.info("===> Delay more than timeout config");
         List<CustomerResponse> customerResponseListWithDelayFailed = client.getCustomers("11",
                 null,
                 null,
