@@ -1,4 +1,4 @@
-package com.polovyi.ivan.queryparams.example_4;
+package com.polovyi.ivan.timeout.example_4;
 
 import com.polovyi.ivan.dto.CustomerResponse;
 import feign.QueryMap;

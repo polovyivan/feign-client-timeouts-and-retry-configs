@@ -1,4 +1,4 @@
-package com.polovyi.ivan.queryparams.example_6;
+package com.polovyi.ivan.timeout.example_6;
 
 import feign.Param;
 import java.time.LocalDate;

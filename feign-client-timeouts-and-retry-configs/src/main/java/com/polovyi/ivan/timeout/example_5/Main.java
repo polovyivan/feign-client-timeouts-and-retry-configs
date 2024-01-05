@@ -1,8 +1,8 @@
-package com.polovyi.ivan.queryparams.example_5;
+package com.polovyi.ivan.timeout.example_5;
 
 import com.polovyi.ivan.configuration.ClientConfig;
 import com.polovyi.ivan.dto.CustomerResponse;
-import com.polovyi.ivan.queryparams.example_5.CustomerAppClient_5.GetCustomersWithFiltersQueryParams;
+import com.polovyi.ivan.timeout.example_5.CustomerAppClient_5.GetCustomersWithFiltersQueryParams;
 import feign.Feign;
 import feign.Logger.Level;
 import feign.jackson.JacksonDecoder;
